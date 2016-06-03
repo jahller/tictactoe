@@ -1,0 +1,25 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "TicTacToe game - React demo by @jahller",
+  "main": "index.html",
+  "dependencies": {
+    "react": "15.1.0",
+    "react-dom": "15.1.0",
+    "bootstrap": "3.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jahller/tictactoe.git"
+  },
+  "author": "Jan Heller - @jahller",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/jahller/tictactoe/issues"
+  },
+  "homepage": "https://github.com/jahller/tictactoe#readme"
+}

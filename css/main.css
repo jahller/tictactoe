@@ -1,0 +1,23 @@
+.game {
+    width: 200px;
+}
+.row {
+    width: 200px;
+    float: left;
+}
+.btn {
+    float: left;
+    height: 35px;
+    width: 50px;
+    background-color: #000000;
+    margin: 3px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+.btn.p1 {
+    background-color: red;
+}
+.btn.p2 {
+    background-color: blue;
+}
