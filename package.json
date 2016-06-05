@@ -6,7 +6,8 @@
   "dependencies": {
     "react": "15.1.0",
     "react-dom": "15.1.0",
-    "bootstrap": "3.3.6"
+    "bootstrap": "3.3.6",
+    "font-awesome": "4.6.3"
   },
   "devDependencies": {},
   "scripts": {

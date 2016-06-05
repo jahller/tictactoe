@@ -1,23 +1,52 @@
 .game {
-    width: 200px;
-}
-.row {
-    width: 200px;
-    float: left;
-}
-.btn {
-    float: left;
-    height: 35px;
-    width: 50px;
-    background-color: #000000;
-    margin: 3px;
-    color: white;
     text-align: center;
-    padding-top: 15px;
 }
-.btn.p1 {
-    background-color: red;
+.game input {
+    width: 400px;
+    margin: auto;
 }
-.btn.p2 {
-    background-color: blue;
+.matrix {
+    width: 210px;
+    margin: auto;
+}
+.elementRow {
+    width: 210px;
+    float: left;
+    border-top: 1px solid black;
+}
+.elementRow.first {
+    border-top: 0 none;
+}
+.red {
+    color: #a94442;
+}
+.blue {
+    color: #23527c;
+}
+.element {
+    float: left;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    cursor: pointer;
+    border-left: 1px solid black;
+}
+.element.first {
+    border-left: 0 none;
+}
+.element.p1 {
+    color: #a94442;
+}
+.element.p2 {
+    color: #23527c;
+}
+.element i {
+    margin-top: 7px;
+}
+.well {
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+.footer {
+    text-align: center;
 }
