@@ -4,14 +4,31 @@
   "description": "TicTacToe game - React demo by @jahller",
   "main": "index.html",
   "dependencies": {
-    "react": "15.1.0",
-    "react-dom": "15.1.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
     "bootstrap": "3.3.6",
-    "font-awesome": "4.6.3"
+    "font-awesome": "4.6.3",
+    "react": "15.1.0",
+    "react-dom": "15.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-jest": "^12.1.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-react": "^6.5.0",
+    "jest-cli": "^12.1.1",
+    "react-addons-test-utils": "^15.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "browserify -t [ babelify --presets [ react ] ] js/src/index.js -o js/build/app.js"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ]
   },
   "repository": {
     "type": "git",

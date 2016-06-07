@@ -1,7 +1,11 @@
+var React = require('react');
+
+var ElementRow = require('./ElementRow');
+
 /**
  * @class Game
  */
-var Game = React.createClass({
+module.exports = React.createClass({
     /** @var {int} elements - number of elements per side */
     elements: 3,
     /** @var {array} matrix - game matrix with all numbers and letters */
@@ -338,110 +342,3 @@ var Game = React.createClass({
         );
     }
 });
-
-/**
- * @class ElementRow
- */
-var ElementRow = React.createClass({
-    /**
-     * Delegates the turn and clicked value to the parent Game class
-     *
-     * @param {string} turn
-     * @param {string} value
-     * @param {string} iconName
-     */
-    handleClick: function(turn, value, iconName) {
-        this.props.onClick(turn, value, iconName);
-    },
-    /**
-     * Renders each of the elements
-     *
-     * @returns {XML}
-     */
-    render: function() {
-        return (
-            <div className={'elementRow ' + this.props.additionalClassName }>
-                <Element
-                    value={this.props.letter + '1'}
-                    turn={this.props.turn}
-                    onClick={this.handleClick}
-                    additionalClassName={'first'}
-                    iconName={this.props.iconName}
-                />
-                <Element
-                    value={this.props.letter + '2'}
-                    turn={this.props.turn}
-                    onClick={this.handleClick}
-                    additionalClassName={''}
-                    iconName={this.props.iconName}
-                />
-                <Element
-                    value={this.props.letter + '3'}
-                    turn={this.props.turn}
-                    onClick={this.handleClick}
-                    additionalClassName={''}
-                    iconName={this.props.iconName}
-                />
-            </div>
-        );
-    }
-});
-
-/**
- * @class Element
- */
-var Element = React.createClass ({
-    /**
-     * Initial state of each Element is "Has not been clicked", "No class name"
-     *
-     * @returns {{clicked: boolean, className: string}}
-     */
-    getInitialState: function() {
-        return {
-            clicked: false,
-            className: ''
-        };
-    },
-    /**
-     * On click the element retrieves the current player's name as class name
-     * and the "clicked" state is set to true
-     */
-    handleClick: function() {
-        if (!this.state.clicked) {
-            this.setState({
-                clicked: true,
-                className: (this.props.turn === 'p1' ? 'p2' : 'p1'),
-                iconName: (this.props.iconName === 'times' ? 'circle-o' : 'times')
-            });
-            this.props.onClick(
-                this.props.turn === 'p1' ? 'p2' : 'p1',
-                this.props.value,
-                this.props.iconName === 'times' ? 'circle-o' : 'times'
-            );
-        }
-    },
-    /**
-     * Renders each clickable element
-     *
-     * @returns {XML}
-     */
-    render: function() {
-        var className = this.state.className;
-        var iconName = this.state.iconName;
-        return (
-            <div className={'element ' + className + ' ' + this.props.additionalClassName}
-                 onClick={this.handleClick}
-            >
-                <i className={'fa fa-4x fa-' + iconName} />
-            </div>
-        );
-    }
-});
-
-/**
- * Renders the game in the element with the ID "example"
- */
-ReactDOM.render(
-    <Game />,
-    document.getElementById('example')
-);
